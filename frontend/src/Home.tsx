@@ -20,7 +20,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="about">
+      <section className="about" id="about-block">
         <div className="about-content block-animation">
           {" "}
           {/* Added a wrapper div */}
@@ -41,7 +41,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="services">
+      <section className="services" id="services-block">
         <h2>Services</h2>
         <div className="service-grid">
           <div className="service block-animation">
@@ -82,7 +82,7 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="contact">
+      <section className="contact" id="contact-block">
         <div className="contact-container block-animation">
           <h2>Contact Us</h2>
           <p>Get in touch with us today!</p>
