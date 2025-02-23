@@ -1,0 +1,280 @@
+.home-page {
+  display: flex;
+  flex-direction: column; /* Arrange sections vertically */
+  min-height: 100vh; /* Ensure full viewport height */
+}
+
+/* Hero Section */
+.hero {
+  background-color: #f0f0f0; /* Example hero background */
+  padding: 5rem 0;
+  text-align: center;
+}
+
+.typing-container {
+  border-right: 2px solid;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: 24px;
+  width: 0;
+  animation: typing 3.5s steps(40, end) forwards,
+             blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+.hero-content {
+  max-width: 76%;
+  margin: 0 auto;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* About, Services, Contact Sections */
+.about,
+.services,
+.contact {
+  padding: 3rem 2rem; /* Consistent padding for sections */
+}
+
+.about h2,
+.services h2,
+.contact h2 {
+  margin-bottom: 1.5rem;
+}
+
+/* Services Grid */
+.services {
+  padding: 3rem 2rem; /* Consistent padding for sections */
+  overflow: hidden; /* Needed for staggered animation */
+}
+
+.services h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid */
+  gap: 2rem;
+}
+
+.service {
+  background-color: #fff; /* Example background color */
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transitions */
+  opacity: 0; /* Initial opacity for animation */
+  transform: translateY(20px); /* Initial position for animation */
+}
+
+.service h3 {
+  margin-bottom: 1rem;
+}
+
+.service p {
+  color: #555; /* Slightly darker text */
+  line-height: 1.6; /* Improved readability */
+}
+
+.service:nth-child(1) {
+    animation: fadeInUp 0.8s ease 0.2s forwards; /* Staggered animation */
+}
+.service:nth-child(2) {
+    animation: fadeInUp 0.8s ease 0.4s forwards; /* Staggered animation */
+}
+.service:nth-child(3) {
+    animation: fadeInUp 0.8s ease 0.6s forwards; /* Staggered animation */
+}
+
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+.service:hover {
+  transform: translateY(-5px); /* Move up slightly on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Darker shadow on hover */
+}
+
+/* About Us */
+
+.about {
+  padding: 5rem 2rem; /* Increased padding */
+  background-color: #f8f8f8; /* Softer background */
+  overflow: hidden; /* For animation */
+}
+
+.about-content {
+  max-width: 900px; /* Limit width */
+  margin: 0 auto;
+  display: flex; /* Flexbox for layout */
+  align-items: center; /* Vertically center content */
+  gap: 3rem; /* Spacing between text and image */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease 0.4s forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.about h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #333; /* Darker heading */
+}
+
+.about p {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #555;
+  flex: 1; /* Make text take available space */
+}
+
+.about-image {
+  flex: 1; /* Image takes available space */
+  text-align: center; /* Center image */
+}
+
+.about-image img {
+  max-width: 100%; /* Image responsive */
+  height: auto;
+  border-radius: 8px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .about-content {
+    flex-direction: column; /* Stack on smaller screens */
+    text-align: center; /* Center text */
+  }
+  .about-image {
+    margin-top: 2rem; /* Add spacing above image */
+  }
+}
+
+
+/* Contact Form */
+
+.contact {
+  background-color: var(--gray);
+  padding: 5rem 2rem;
+  overflow: hidden; /* For animation */
+}
+
+.contact-container {
+  max-width: 700px;
+  margin: 0 auto;
+  background-color: var(--white);
+  padding: 3rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* More prominent shadow */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease 0.6s forwards; /* Animation with delay */
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--navy);
+  text-align: center;
+}
+
+.contact p {
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #7f8c8d;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem; /* Increased spacing between form elements */
+}
+
+.contact input,
+.contact textarea {
+  padding: 1rem;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease; /* Transition for focus */
+}
+
+.contact input:focus,
+.contact textarea:focus {
+  border-color: var(--light-blue); /* Highlight on focus */
+  outline: none; /* Remove default outline */
+  box-shadow: 0 0 5px rgba(52, 152, 219, 0.2); /* Subtle glow on focus */
+}
+
+.contact textarea {
+  height: 150px; /* Increased height for textarea */
+  resize: vertical; /* Allow vertical resizing */
+}
+
+.contact button {
+  background-color: var(--light-blue);
+  color: var(--white);
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transitions */
+}
+
+.contact button:hover {
+  background-color: #2980b9; /* Darker blue on hover */
+  transform: scale(1.05); /* Scale up slightly on hover */
+}
+
+.contact button:active {
+  transform: scale(0.95); /* Scale down slightly on click */
+}
+
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: auto; /* Push footer to bottom */
+}
